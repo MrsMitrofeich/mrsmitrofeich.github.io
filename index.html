@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Chat ID Page</title>
+    <title>Start App Page</title>
 </head>
 <body>
     <h1>Hello World</h1>
     <p>I'm hosted with GitHub Pages.</p>
-    <p id="chat-id-display"></p>
+    <p id="startapp-display"></p>
 
     <script>
         // Функция для получения параметров из URL
@@ -21,15 +21,15 @@
             return params;
         }
 
-        // Получение параметра chat_id
+        // Получение параметра startapp
         const params = getQueryParams();
-        const chatId = params['chat_id'];
+        const startApp = params['startapp'];
 
-        // Отображение chat_id на странице
-        if (chatId) {
-            document.getElementById('chat-id-display').innerText = 'Chat ID: ' + chatId;
+        // Отображение startapp на странице
+        if (startApp) {
+            document.getElementById('startapp-display').innerText = 'Start App: ' + startApp;
         } else {
-            document.getElementById('chat-id-display').innerText = 'No Chat ID provided.';
+            document.getElementById('startapp-display').innerText = 'No Start App provided.';
         }
     </script>
 </body>
