@@ -1,7 +1,36 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Chat ID Page</title>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <h1>Hello World</h1>
+    <p>I'm hosted with GitHub Pages.</p>
+    <p id="chat-id-display"></p>
+
+    <script>
+        // Функция для получения параметров из URL
+        function getQueryParams() {
+            const params = {};
+            const queryString = window.location.search.substring(1);
+            const regex = /([^&=]+)=([^&]*)/g;
+            let m;
+            while (m = regex.exec(queryString)) {
+                params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+            }
+            return params;
+        }
+
+        // Получение параметра chat_id
+        const params = getQueryParams();
+        const chatId = params['chat_id'];
+
+        // Отображение chat_id на странице
+        if (chatId) {
+            document.getElementById('chat-id-display').innerText = 'Chat ID: ' + chatId;
+        } else {
+            document.getElementById('chat-id-display').innerText = 'No Chat ID provided.';
+        }
+    </script>
 </body>
 </html>
